@@ -1,0 +1,100 @@
+.cart-box-main {
+  margin-top: 100px;
+}
+
+#empty-cart input[type="submit"] {
+  background: rgb(0, 144, 158);
+  border: medium none;
+  border-radius: var(--bs-border-radius);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #fff;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  height: 50px;
+  line-height: 40px;
+  margin-right: 15px;
+  padding: 0 20px;
+  text-shadow: none;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  white-space: nowrap;
+  width: inherit;
+}
+
+#empty-cart-container,
+#empty-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#checkout {
+  display: flex !important;
+  background: rgb(0, 144, 158);
+  border: medium none;
+  border-radius: var(--bs-border-radius);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  height: 50px;
+  line-height: 40px;
+  padding: 5px 20px;
+  text-shadow: none;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  white-space: nowrap;
+  width: 10%;
+  margin-left: auto !important;
+}
+
+.img-fluid {
+  width: 160px;
+  height: 100px;
+}
+
+.table-responsive .table td,
+.table-responsive .table th {
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.table-main table thead {
+  background: rgb(0, 144, 158);
+  border-radius: 168px;
+}
+
+.table thead th {
+  color: #FFFFFF;
+}
+
+tbody tr td p {
+  margin-bottom: 0px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #4a4a4a;
+  line-height: 24px;
+}
+
+.quantity-box input {
+  width: 100%;
+  border: 1px solid rgb(0, 144, 158);
+  border-radius: var(--bs-border-radius);
+  text-align: center;
+}
+
+.name-pr {
+  font-size: 16px;
+  color: #010101;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}

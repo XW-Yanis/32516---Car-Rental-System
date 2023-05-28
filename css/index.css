@@ -1,0 +1,58 @@
+.section-heading {
+  text-align: left;
+  margin-bottom: 60px;
+  border-bottom: 1px solid rgb(195, 195, 195);
+}
+
+.section-heading h2 {
+  font-size: 28px;
+  font-weight: 400;
+  color: #1e1e1e;
+  margin-bottom: 15px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.section-heading a {
+  float: right;
+  margin-top: -35px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgb(0, 144, 158);
+  transition: all 0.5s;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 150px;
+}
+
+
+
+
+.card {
+  margin-bottom: 30px;
+}
+
+.card-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 375px;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.heading {
+  margin-top: 100px;
+}

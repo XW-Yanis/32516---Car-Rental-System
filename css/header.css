@@ -1,0 +1,35 @@
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.navbar-header {
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+#navCheckout {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.nav-link {
+  padding-right: var(--bs-navbar-nav-link-padding-x);
+  padding-left: var(--bs-navbar-nav-link-padding-x);
+  margin-left: auto;
+  font-size: 20px;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.active,
+.nav-link:focus,
+.nav-link:hover {
+  color: rgb(192, 192, 192);
+}
