@@ -1,17 +1,1 @@
-[
-  {
-    "id": "6",
-    "category": "SUV",
-    "car_availability": "1",
-    "brand": "Jeep",
-    "model": "Wrangler",
-    "model_year": "2020",
-    "mileage": "15",
-    "fuel_type": "Gasoline",
-    "seats": "5",
-    "daily_price": "80",
-    "car_description": "Off-road SUV with iconic style",
-    "img_src": "img\/jeep-suv.png",
-    "rental_days": 1
-  }
-]
+[{"id":"14","category":"SUV","car_availability":"1","brand":"Tesla","model":"Model X","model_year":"2021","mileage":"5","fuel_type":"Electric","seats":"7","daily_price":"250","car_description":"Luxury electric SUV with falcon-wing doors","img_src":"img\/tesla-suv.png","rental_days":1}]

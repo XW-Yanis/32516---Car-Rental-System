@@ -46,7 +46,7 @@ function render() {
                   <li class="list-group-item">Fuel Type: ${car.fuel_type}</li>
                   <li class="list-group-item">Seats: ${car.seats}</li>
                   <li class="list-group-item">Price per day: ${'$' + car.daily_price}</li>
-                  <li class="list-group-item">Availability: ${car.car_availability ? 'In stock' : 'Out of stock'}</li>
+                  <li class="list-group-item">Status: ${parseInt(car.car_availability) !== 0 ? 'In stock' : 'Out of stock'}</li>
                 </ul>
                 <div class="card-body">
                   <a onclick="addBtnOnClick(event, ${car.id}, ${car.car_availability})" href="#" class="card-link" id="addBtn">Add to cart</a>
@@ -54,6 +54,7 @@ function render() {
               </div>
             </div>
           `;
+
         insertposition.insertAdjacentHTML("afterend", html);
       }
     })
@@ -66,7 +67,6 @@ function render() {
 // Add to cart function
 function addBtnOnClick(event, carID, car_availability) {
   event.preventDefault();
-
   if (car_availability == false) {
     alert("Sorry, the car is not available now. Please try other cars.");
     return;

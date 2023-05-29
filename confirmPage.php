@@ -54,29 +54,15 @@ foreach ($cars_in_session as $car) {
 $updatedJsonData = json_encode(array_values($cars_in_json));
 file_put_contents($path, $updatedJsonData);
 
-// Insert booking record into database
-/* 
-array(8) {
-  ["hasBookedIn90"]=>
-  string(5) "false"
-  ["firstname"]=>
-  string(5) "Xiang"
-  ["lastname"]=>
-  string(4) "Weng"
-  ["address"]=>
-  string(58) "75 Albion Street, 莎莉山 新南威尔士州澳大利亚"
-  ["email"]=>
-  string(29) "Xiang.Weng@student.uts.edu.au"
-  ["city"]=>
-  string(11) "Surry Hills"
-  ["state"]=>
-  string(3) "NSW"
-  ["postcode"]=>
-  string(4) "2010"
-}
-*/
 $email = $_POST['email'];
-$bond = ($_POST['hasBookedIn90']) ? 0 : 200;
+$booked = filter_var($_POST['hasBookedIn90'], FILTER_VALIDATE_BOOLEAN);
+
+$bond = 200;
+
+if ($booked) {
+  $bond = 0;
+}
+
 $date = date('Y-m-d');
 
 $query = "insert into renting_history (user_email, rent_date, bond_amount) values ('$email', '$date', '$bond')";
