@@ -1,11 +1,12 @@
 var hasBookedIn90 = false;
+var bondAdded = false;
 // render the cart
 function render() {
   changeNavbar();
   let insertPosition = document.getElementById('insert-position');
   let grandTotal = document.getElementById('grand-total');
   let emailField = document.getElementById('email');
-  emailField.addEventListener('input', checkBookingHistory);
+  emailField.addEventListener('blur', checkBookingHistory);
 
   let total = 0;
   $.getJSON("json/selectedCars.json", function (data) {
@@ -53,7 +54,6 @@ function changeNavbar() {
 function validateForm() {
   let elements = document.querySelectorAll(".needs-validation input");
   let valid = true;
-  console.log(elements);
   for (let i = 0; i < elements.length; i++) {
     if (elements[i].value.trim() === "" || elements[i].value === elements[i].getAttribute("palceholder")) {
       elements[i].classList.add("is-invalid");
@@ -82,6 +82,7 @@ function validateEmail() {
   }
 }
 
+// check if current email relates to any booking records in the last 90 days
 function checkBookingHistory() {
   let email = this.value;
 
@@ -98,18 +99,22 @@ function checkBookingHistory() {
       if (!hasBookedIn90) {
         alert('Dear Customer, \n\n$ 200 will be added to your order as bond' +
           ' since you have not booked any cars in the past 90 days.');
-        let insertPosition = document.getElementById('insert-position');
-        let html = `<div class="rounded p-2 bg-light">
-        <div class="media mb-2">
-        <div class="media-body"> <a href="#">Bond</a>
-        <div class="small text-muted">Subtotal: $ 200</div>
-        </div>
-        </div>
-        </div>`;
-        let grandTotal = document.getElementById('grand-total');
-        insertPosition.insertAdjacentHTML("afterend", html);
-        grandTotal.innerHTML = '$ ' + (parseInt(grandTotal.textContent.slice(2)) + 200);
+        if (!bondAdded) {
+          let insertPosition = document.getElementById('insert-position');
+          let html = `<div class="rounded p-2 bg-light">
+          <div class="media mb-2">
+          <div class="media-body"> <a href="#">Bond</a>
+          <div class="small text-muted">Subtotal: $ 200</div>
+          </div>
+          </div>
+          </div>`;
+          let grandTotal = document.getElementById('grand-total');
+          insertPosition.insertAdjacentHTML("afterend", html);
+          grandTotal.innerHTML = '$ ' + (parseInt(grandTotal.textContent.slice(2)) + 200);
+          bondAdded = true;
+        }
       }
+      document.querySelector('input[name="hasBookedIn90"]').value = hasBookedIn90;
     })
     .catch(error => {
       console.error('An error occurred while checking booking history:', error);

@@ -42,10 +42,11 @@ function render() {
                   <p class="card-text">${car.car_description}</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Mileage: ${car.mileage}</li>
+                  <li class="list-group-item">Mileage(km): ${car.mileage}</li>
                   <li class="list-group-item">Fuel Type: ${car.fuel_type}</li>
                   <li class="list-group-item">Seats: ${car.seats}</li>
                   <li class="list-group-item">Price per day: ${'$' + car.daily_price}</li>
+                  <li class="list-group-item">Availability: ${car.car_availability ? 'In stock' : 'Out of stock'}</li>
                 </ul>
                 <div class="card-body">
                   <a onclick="addBtnOnClick(event, ${car.id}, ${car.car_availability})" href="#" class="card-link" id="addBtn">Add to cart</a>

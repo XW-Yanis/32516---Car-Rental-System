@@ -1,1 +1,17 @@
-[{"id":"19","category":"Sedan","car_availability":"1","brand":"Lucid","model":"Air","model_year":"2022","mileage":"10","fuel_type":"Electric","seats":"5","daily_price":"200","car_description":"Luxury electric sedan with impressive range","img_src":"img\/lucid-sedan.png","rental_days":2}]
+[
+  {
+    "id": "6",
+    "category": "SUV",
+    "car_availability": "1",
+    "brand": "Jeep",
+    "model": "Wrangler",
+    "model_year": "2020",
+    "mileage": "15",
+    "fuel_type": "Gasoline",
+    "seats": "5",
+    "daily_price": "80",
+    "car_description": "Off-road SUV with iconic style",
+    "img_src": "img\/jeep-suv.png",
+    "rental_days": 1
+  }
+]

@@ -37,13 +37,13 @@ if ($numsOfBooking != 0) {
   $bookings = mysqli_fetch_all($result);
 
   foreach ($bookings as $booking) {
-    $rentDate = $booking['rent_date'];
+    $rentDate = $booking[2];
 
     $diff = date_diff(date_create($rentDate), date_create($today));
     $daysDifference = $diff->format('%a');
 
     if ($daysDifference <= 90) {
-      $hasBookedWithin90Days = true;
+      $hasBookedIn90Days = true;
       break;
     }
   }

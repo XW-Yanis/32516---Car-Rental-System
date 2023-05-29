@@ -21,11 +21,8 @@
               <h3>Billing Address</h3>
             </div>
 
-            <form class="needs-validation" novalidate action="index.php"
-              onsubmit="return validateForm() && validateEmail()" method="post">
-              <textarea id="items-detail-text" name="items-detail" style="display:none"></textarea>
-              <textarea id="grand-total-text" name="grand-total" style="display:none"></textarea>
-
+            <form class="needs-validation" novalidate action="confirmPage.php" method="post">
+              <input type="hidden" name="hasBookedIn90" value="false">
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="firstName">First name *</label>

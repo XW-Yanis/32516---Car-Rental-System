@@ -32,4 +32,7 @@ mysqli_close($con);
 $updatedJsonData = json_encode(array_values($cars_in_json));
 file_put_contents($path, $updatedJsonData);
 
+// Insert booking record into database
+
+
 ?>

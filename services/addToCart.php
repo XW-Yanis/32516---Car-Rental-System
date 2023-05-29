@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 $car = $_POST['car'];
 $rentalDays = 1;
 
@@ -9,13 +10,19 @@ if (!isset($_SESSION['cart'])) {
 
 $carAdded = false;
 
-$cart = json_decode($_SESSION['cart'], true);
+$cart = $_SESSION['cart'];
 
-foreach ($cart as $item) {
-  if ($item['carID'] == $car) {
-    $item['rentalDays']++;
-    $carAdded = true;
-    break;
+if (!empty($cart)) {
+  if (gettype($cart) != 'array') {
+    $cart = json_decode($cart, true);
+  }
+
+  foreach ($cart as &$item) {
+    if ($item['carID'] == $car) {
+      $item['rentalDays']++;
+      $carAdded = true;
+      break;
+    }
   }
 }
 
@@ -26,6 +33,6 @@ if (!$carAdded) {
 
 $_SESSION['cart'] = json_encode($cart);
 
-echo json_encode($cart);
+echo $_SESSION['cart'];
 
 ?>
